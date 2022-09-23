@@ -1,8 +1,3 @@
-from cmath import sqrt
-from heapq import heappush
-from itertools import count
-from operator import truediv
-from turtle import width
 import pygame
 import numpy
 import random
@@ -97,7 +92,6 @@ def exploreSurounding(node):
             openNodes.append(tempNode)
 
 
-
 def aStar(node):
     # probably shouldn't clear it and just use the path we have already created.
     # but right now with the way things are setup it breaks things.
@@ -132,10 +126,6 @@ def aStar(node):
             break
 
 
-    
-        
-
-
 def moveSnake(movePos, ate):
     # add the move pos to the head, and add that to the list
     snake.insert(0, ((snake[0][0] + movePos[0]) % MAP_SIZE, (snake[0][1] + movePos[1]) % MAP_SIZE))
@@ -144,6 +134,7 @@ def moveSnake(movePos, ate):
     if not ate:
         snake.pop()
     return snake
+
 
 def drawBoard():
     #draw board and apple            
